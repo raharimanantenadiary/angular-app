@@ -1,0 +1,30 @@
+<div class="container mt-2">
+		<div class="row">
+			<div class="col-6">
+				<table class="table" border="1" cellspacing="0">
+					<thead>
+						<tr class="bg-danger">
+							<th>Nom</th>
+							<th>Marque</th>
+							<th>Date</th>
+							<th>Modifier</th>
+							<th>Supprimer</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ngIf="emplist.length > 0 else" *ngFor="let item of emplist">
+							<td>{{item.nom}}</td>
+							<td>{{item.description}}</td>
+							<td>{{item.date|date}}</td>
+							<td> <a  [routerLink]="['/update',item._id]"class="nav-item nav-link"><button  class="btn btn-outline-secondary">Modifier</button></a></td>
+							<td> <a  [routerLink]="['/delete',item._id]"class="nav-item nav-link"><button class="btn btn-outline-secondary">Supprimer</button></a></td>
+						</tr>
+						<p>Ts6</p>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+<router-outlet></router-outlet>
+
